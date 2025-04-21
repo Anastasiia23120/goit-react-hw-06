@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "nanoid";
 import { addContact } from "../../redux/contactsSlice.js";
-import { Formik, Field, ErrorMessage } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
@@ -58,7 +58,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       {({ handleSubmit, isSubmitting }) => (
-        <div className={css.form}>
+        <Form className={css.form}>
           <div className={css.formGroup}>
             <label className={css.label} htmlFor="name">
               Name
@@ -83,7 +83,7 @@ const ContactForm = () => {
           >
             Add contact
           </button>
-        </div>
+        </Form>
       )}
     </Formik>
   );
